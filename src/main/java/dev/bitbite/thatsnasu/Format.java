@@ -1,4 +1,4 @@
-package dev.bitbite.dasnasu;
+package dev.bitbite.thatsnasu;
 
 /**
  * Predefined Format options to be used wherever you want. These ANSI Escaping Codes only work in environments which support ANSI Escaping.

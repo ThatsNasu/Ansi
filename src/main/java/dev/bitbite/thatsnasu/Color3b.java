@@ -1,4 +1,4 @@
-package dev.bitbite.dasnasu;
+package dev.bitbite.thatsnasu;
 
 /**
  * Predefined Colors to be used wherever you want. These ColorCodes follow the 3Bit scheme and only work in environments that support ANSI Escaping.

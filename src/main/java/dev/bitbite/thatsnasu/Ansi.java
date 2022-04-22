@@ -1,4 +1,4 @@
-package dev.bitbite.dasnasu;
+package dev.bitbite.thatsnasu;
 
 import java.util.ArrayList;
 
