@@ -4,7 +4,7 @@
 [![Version](https://img.shields.io/github/v/release/thatsnasu/OpenNetLib?include_prereleases)](https://github.com/thatsnasu/Ansi/releases)
 [![Discord channel](https://img.shields.io/discord/411109318511820800?logo=discord)](https://discord.gg/MdsuFg2bPC)
 
-Ansi is easy to use library for easier text formatting with ANSI Escape Sequences by providing the required methods, while keeping the API lightweight and logical. Its written in and for Java. Despite being in an early stage, it already saves a lot of work and implementation. If you want to help me improve this library further, feel free to open Issues, fork this Project for your own use or post questions as well as answers to already existing questions.
+Ansi is an easy to use library for easier text formatting with ANSI Escape Sequences by providing the required methods, while keeping the API lightweight and logical. Its written in and for Java. Despite being in an early stage, it already saves a lot of work and implementation. If you want to help me improve this library further, feel free to open Issues, fork this Project for your own use or post questions as well as answers to already existing questions.
 
 ---
 
@@ -45,4 +45,4 @@ Check out the [Getting started](https://github.com/thatsnasu/Ansi/wiki/Getting-s
 
 
 ## Some words about my Motivation
-Writing several Java Programs, i noticed that i often reuse my own code from Project to Project, namely logging mechanisms and Colorization with ANSI Escape Sequences. Memorizing this Sequences is hard, using a library with an easy to use API for it and getting what you need with one or only a few lines of logically structured code isn't. Refurbishing Code will do once in a while, but on the long hand its hard to maintain across multiple Projects, so i started developing this library to have to change only one part of the code and on the same time give others the opportunity to use it aswell.
+Writing several Java Programs, i noticed that i often reuse my own code from Project to Project, namely logging mechanisms and Colorization with ANSI Escape Sequences. Memorizing this Sequences is hard, using a library with an easy to use API for it isn't. Refurbishing Code will do once in a while, but on the long run its hard to maintain across multiple projects, so i started developing this library to have to change only one part of the code and on the same time give others the opportunity to use it aswell.
