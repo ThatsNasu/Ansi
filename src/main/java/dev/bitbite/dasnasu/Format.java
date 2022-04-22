@@ -25,7 +25,7 @@ public enum Format {
 	 */
 	ITALIC("3"),
 	/**
-	 * Resets any existing formatting.
+	 * Resets any colorization or formatting on text.
 	 */
 	RESET("0"),
 	/**
@@ -47,7 +47,11 @@ public enum Format {
 	public String getFormatCode() {
 		return this.formatCode;
 	}
-	
+
+	/**
+	 * Returns the String representation of the ANSI Escape value associated with a given {@link Format}.
+	 * @return formatCode as full ANSI Escape Sequence String.
+	 */
 	@Override
 	public String toString() {
 		return "\u001b["+this.formatCode+"m";
