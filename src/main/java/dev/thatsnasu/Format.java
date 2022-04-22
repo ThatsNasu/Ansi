@@ -1,7 +1,8 @@
-package dev.bitbite.thatsnasu;
+package dev.thatsnasu;
 
 /**
- * Predefined Format options to be used wherever you want. These ANSI Escaping Codes only work in environments which support ANSI Escaping.
+ * Predefined Format options.
+ * These ANSI Escaping Codes only work in environments which support ANSI Escaping.
  */
 public enum Format {
 	/**

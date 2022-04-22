@@ -1,12 +1,14 @@
-package dev.bitbite.thatsnasu;
+package dev.thatsnasu;
 
 import java.util.ArrayList;
 
 /**
- * Creates a new Ansi Object which will hold some information and provides methods to manipulate and reuse them.
+ * Objects created of this class will hold information about Colors and Formats.
+ * It also provides methods for manipulation and reusing them.
  */
 public class Ansi {
 	private Color3b color3b;
+	private Color4b color4b;
 	private ArrayList<Format> formats;
 	
 	/**
@@ -27,6 +29,16 @@ public class Ansi {
 	}
 	
 	/**
+	 * Creates a new Ansi Object, which will hold provided Color values as well as formatting options.
+	 * @param color4b of the Ansi Object
+	 * @param formats of the Ansi Object
+	 */
+	public Ansi(Color4b color4b, Format... formats) {
+		this.color4b = color4b;
+		this.addFormats(formats);
+	}
+	
+	/**
 	 * Returns the corresponding ANSI Escape Sequence for a given {@link Color3b} and optional {@link Format}s.
 	 * @param color3b of the resulting ANSI Escape String.
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
@@ -34,6 +46,20 @@ public class Ansi {
 	 */
 	public String getAnsiEscape(Color3b color3b, Format... formats) {
 		String escape = "\u001b["+color3b.getColorCode();
+		for(Format format : formats) {
+			escape +=";"+format.getFormatCode();
+		}
+		return escape+"m";
+	}
+	
+	/**
+	 * Returns the corresponding ANSI Escape Sequence for a given {@link Color4b} and optional {@link Format}s.
+	 * @param color4b of the resulting ANSI Escape String.
+	 * @param formats of the resulting ANSI Escape String, can be left empty.
+	 * @return the String representation of the ANSI Escape String.
+	 */
+	public String getAnsiEscape(Color4b color4b, Format... formats) {
+		String escape = "\u001b["+color4b.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
 		}
@@ -59,19 +85,13 @@ public class Ansi {
 	 * @return the String representation of the ANSI Escape String.
 	 */
 	public String getAnsiEscape() {
-		String escape = "\u001b["+this.color3b.getColorCode();
+		String escape = "\u001b[";
+		escape += (this.color3b != null) ? this.color3b.getColorCode() : "";
+		escape += (this.color4b != null) ? this.color4b.getColorCode() : "";
 		for(Format format : this.formats) {
 			escape += ";"+format.getFormatCode();
 		}
 		return escape+"m";
-	}
-	
-	/**
-	 * Adds a {@link Format} to the stored formatting options if it is not already set.
-	 * @param format to be added
-	 */
-	public void addFormat(Format format) {
-		if(!this.formats.contains(format)) this.formats.add(format);
 	}
 	
 	/**
@@ -80,16 +100,8 @@ public class Ansi {
 	 */
 	public void addFormats(Format... formats) {
 		for(Format format : formats) {
-			this.addFormat(format);
+			if(!this.formats.contains(format)) this.formats.add(format);
 		}
-	}
-	
-	/**
-	 * Removes a {@link Format} from the stored formatting options if it exists.
-	 * @param format to be removed
-	 */
-	public void removeFormat(Format format) {
-		if(this.formats.contains(format)) this.formats.remove(format);
 	}
 	
 	/**
@@ -98,7 +110,7 @@ public class Ansi {
 	 */
 	public void removeFormats(Format... formats) {
 		for(Format format : formats) {
-			this.removeFormat(format);
+			if(this.formats.contains(format)) this.formats.remove(format);
 		}
 	}
 	
@@ -108,5 +120,13 @@ public class Ansi {
 	 */
 	public Color3b getColor3b() {
 		return this.color3b;
+	}
+	
+	/**
+	 * Returns this instances stored {@link Color4b}.
+	 * @return color4b of this instance
+	 */
+	public Color4b getColor4b() {
+		return this.color4b;
 	}
 }
