@@ -62,10 +62,6 @@ public enum Color4b {
 	 */
 	RED("Red", "31", "#800000", new int[] {128, 0, 0}),
 	/**
-	 * Resets any colorization or formatting on text.
-	 */
-	RESET("Reset", "0", null, null),
-	/**
 	 * Colorizes text in white. Rgb value is 128, 128, 128. Hexadecimal value is #808080.
 	 */
 	WHITE("White", "37", "#808080", new int[] {128, 128, 128}),

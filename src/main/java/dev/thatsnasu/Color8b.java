@@ -542,10 +542,6 @@ public enum Color8b {
 	 */
 	RED("Red", "9", "#ff0000", new int[] {255, 0, 0}),
 	/**
-	 * Resets any colorization or formatting on text.
-	 */
-	RESET("Reset", "0", null, null),
-	/**
 	 * Colorizes text in reef. Rgb value is 215, 255, 175. Hexadecimal value is #d7ffaf.
 	 */
 	REEF("Reef", "193", "d7ffaf", new int[] {215, 255, 175}),
@@ -757,6 +753,6 @@ public enum Color8b {
 	 */
 	@Override
 	public String toString() {
-		return "\u001b["+this.colorCode+"m";
+		return "\u001b[38;5;"+this.colorCode+"m";
 	}
 }
