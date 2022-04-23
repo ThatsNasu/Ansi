@@ -1,12 +1,12 @@
 package dev.thatsnasu;
 
 /**
- * Predefined Colors.
+ * Predefined 3bit Colors.
  * These ColorCodes follow the 3Bit scheme and only work in environments that support ANSI Escaping.
  */
 public enum Color3b {
 	/**
-	 * Colorized text in black. Rgb value is 0, 0, 0. Hexadecimal value is #000000.
+	 * Colorizes text in black. Rgb value is 0, 0, 0. Hexadecimal value is #000000.
 	 */
 	BLACK("Black", "30", "#000000", new int[] {0, 0, 0}),
 	/**

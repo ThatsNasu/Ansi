@@ -9,6 +9,7 @@ import java.util.ArrayList;
 public class Ansi {
 	private Color3b color3b;
 	private Color4b color4b;
+	private Color8b color8b;
 	private ArrayList<Format> formats;
 	
 	/**
@@ -35,6 +36,16 @@ public class Ansi {
 	 */
 	public Ansi(Color4b color4b, Format... formats) {
 		this.color4b = color4b;
+		this.addFormats(formats);
+	}
+	
+	/**
+	 * Creates a new Ansi Object, which will hold provided Color values as well as formatting options.
+	 * @param color8b of the Ansi Object
+	 * @param formats of the Ansi Object
+	 */
+	public Ansi(Color8b color8b, Format... formats) {
+		this.color8b = color8b;
 		this.addFormats(formats);
 	}
 	
@@ -67,6 +78,20 @@ public class Ansi {
 	}
 	
 	/**
+	 * Returns the corresponding ANSI Escape Sequence for a given {@link Color8b} and optional {@link Format}s.
+	 * @param color8b of the resulting ANSI Escape String.
+	 * @param formats of the resulting ANSI Escape String, can be left empty.
+	 * @return the String representation of the ANSI Escape String.
+	 */
+	public String getAnsiEscape(Color8b color8b, Format... formats) {
+		String escape = "\u001b["+color8b.getColorCode();
+		for(Format format : formats) {
+			escape +=";"+format.getFormatCode();
+		}
+		return escape+"m";
+	}
+	
+	/**
 	 * Returns the corresponding ANSI Escape Sequence for optional {@link Format}s.
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
@@ -88,6 +113,7 @@ public class Ansi {
 		String escape = "\u001b[";
 		escape += (this.color3b != null) ? this.color3b.getColorCode() : "";
 		escape += (this.color4b != null) ? this.color4b.getColorCode() : "";
+		escape += (this.color8b != null) ? this.color8b.getColorCode() : "";
 		for(Format format : this.formats) {
 			escape += ";"+format.getFormatCode();
 		}
@@ -128,5 +154,13 @@ public class Ansi {
 	 */
 	public Color4b getColor4b() {
 		return this.color4b;
+	}
+	
+	/**
+	 * Returns this instances stored {@link Color8b}.
+	 * @return color8b of this instance
+	 */
+	public Color8b getColor8b() {
+		return this.color8b;
 	}
 }

@@ -46,3 +46,7 @@ Check out the [Getting started](https://github.com/thatsnasu/Ansi/wiki/Getting-s
 
 ## Some words about my Motivation
 Writing several Java Programs, i noticed that i often reuse my own code from Project to Project, namely logging mechanisms and Colorization with ANSI Escape Sequences. Memorizing this Sequences is hard, using a library with an easy to use API for it isn't. Refurbishing Code will do once in a while, but on the long run its hard to maintain across multiple projects, so i started developing this library to have to change only one part of the code and on the same time give others the opportunity to use it aswell.
+
+## Special Thanks goes to
+ - [netcode](https://github.com/n3tc0d3), for helping me on questions, problems, sorting my head, finding better solutions and overall helping me improving my code.
+ - the creator of [name that color](https://chir.ag/projects/name-that-color/). I retrieved most of the color names with this tool.
