@@ -1,4 +1,4 @@
-package dev.thatsnasu;
+package dev.thatsnasu.ansi;
 
 import java.util.ArrayList;
 
@@ -26,6 +26,7 @@ public class Ansi {
 	 * @param formats of the Ansi Object
 	 */
 	public Ansi(Color3b color3b, Format... formats) {
+		this.formats = new ArrayList<Format>();
 		this.color3b = color3b;
 		this.addFormats(formats);
 	}
@@ -36,6 +37,7 @@ public class Ansi {
 	 * @param formats of the Ansi Object
 	 */
 	public Ansi(Color4b color4b, Format... formats) {
+		this.formats = new ArrayList<Format>();
 		this.color4b = color4b;
 		this.addFormats(formats);
 	}
@@ -46,6 +48,7 @@ public class Ansi {
 	 * @param formats of the Ansi Object
 	 */
 	public Ansi(Color8b color8b, Format... formats) {
+		this.formats = new ArrayList<Format>();
 		this.color8b = color8b;
 		this.addFormats(formats);
 	}
@@ -56,6 +59,7 @@ public class Ansi {
 	 * @param formats of the Ansi Object
 	 */
 	public Ansi(Color color, Format... formats) {
+		this.formats = new ArrayList<Format>();
 		this.color = color;
 		this.addFormats(formats);
 	}
@@ -66,7 +70,7 @@ public class Ansi {
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape(Color3b color3b, Format... formats) {
+	public static String getAnsiEscape(Color3b color3b, Format... formats) {
 		String escape = "\u001b["+color3b.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
@@ -80,7 +84,7 @@ public class Ansi {
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape(Color4b color4b, Format... formats) {
+	public static String getAnsiEscape(Color4b color4b, Format... formats) {
 		String escape = "\u001b["+color4b.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
@@ -94,7 +98,7 @@ public class Ansi {
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape(Color8b color8b, Format... formats) {
+	public static String getAnsiEscape(Color8b color8b, Format... formats) {
 		String escape = "\u001b[38;5;"+color8b.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
@@ -108,7 +112,7 @@ public class Ansi {
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape(Color color, Format... formats) {
+	public static String getAnsiEscape(Color color, Format... formats) {
 		String escape = "\u001b[38;2;"+color.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
@@ -121,7 +125,7 @@ public class Ansi {
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape(Format... formats) {
+	public static String getAnsiEscape(Format... formats) {
 		String escape = "\u001b[";
 		for(int i = 0; i < formats.length; i++) {
 			if(i > 0) escape += ";";
@@ -167,6 +171,13 @@ public class Ansi {
 	}
 	
 	/**
+	 * Removes all previously set {@link Format}s of this instance.
+	 */
+	public void removeAllFormats() {
+		this.formats = new ArrayList<Format>();
+	}
+	
+	/**
 	 * Returns this instances stored {@link Color3b}.
 	 * @return color3b of this instance
 	 */
@@ -196,5 +207,48 @@ public class Ansi {
 	 */
 	public Color getColor() {
 		return this.color;
+	}
+	
+	/**
+	 * Sets this instances {@link Color3b}.
+	 * @param color3b to be set
+	 */
+	public void setColor3b(Color3b color3b) {
+		this.color3b = color3b;
+	}
+	
+	/**
+	 * Sets this instances {@link Color4b}.
+	 * @param color3b to be set
+	 */
+	public void setColor4b(Color4b color4b) {
+		this.color4b = color4b;
+	}
+	
+	/**
+	 * Sets this instances {@link Color8b}.
+	 * @param color3b to be set
+	 */
+	public void setColor8b(Color8b color8b) {
+		this.color8b = color8b;
+	}
+	
+	/**
+	 * Sets this instances {@link Color}.
+	 * @param color to be set
+	 */
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	/**
+	 * Sets one or more {@link Format}s for this instance.
+	 * @param formats to be set
+	 */
+	public void setFormats(Format... formats) {
+		this.formats = new ArrayList<Format>();
+		for(Format format : formats) {
+			this.formats.add(format);
+		}
 	}
 }

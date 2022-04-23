@@ -1,4 +1,4 @@
-package dev.thatsnasu;
+package dev.thatsnasu.ansi;
 
 /**
  * Predefined 3bit Colors.

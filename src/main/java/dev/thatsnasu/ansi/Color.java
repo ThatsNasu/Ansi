@@ -1,4 +1,4 @@
-package dev.thatsnasu;
+package dev.thatsnasu.ansi;
 
 /**
  * Objects of Color will hold the rgb values, as well as providing methods for using and converting them.
