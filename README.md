@@ -8,7 +8,7 @@ Ansi is an easy to use library for easier text formatting with ANSI Escape Seque
 
 ---
 
-Do you have some questions about this library that are not covered by the [wiki](https://github.com/thatsnasu/Ansi/wiki) (coming soon), or want to help improving it? Feel free to join us on our [Discord Server](https://discord.gg/MdsuFg2bPC).
+Do you have some questions about this library that are not covered by the [wiki](https://github.com/thatsnasu/Ansi/wiki), or want to help improving it? Feel free to join us on our [Discord Server](https://discord.gg/MdsuFg2bPC).
 
 
 ## Adding this library as dependency
@@ -41,7 +41,7 @@ Visit [maven central](https://search.maven.org/artifact/dev.thatsnasu/Ansi) and 
 
 
 ## How to use
-Check out the [Getting started](https://github.com/thatsnasu/Ansi/wiki/Getting-started) section (coming soon).
+Check out the [Getting started](https://github.com/thatsnasu/Ansi/wiki/Getting-started) section.
 
 
 ## Some words about my Motivation
