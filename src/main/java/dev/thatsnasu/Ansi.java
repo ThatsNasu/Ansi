@@ -10,6 +10,7 @@ public class Ansi {
 	private Color3b color3b;
 	private Color4b color4b;
 	private Color8b color8b;
+	private Color color;
 	private ArrayList<Format> formats;
 	
 	/**
@@ -50,6 +51,16 @@ public class Ansi {
 	}
 	
 	/**
+	 * Creates a new Ansi Object, which will hold provided Color values as well as formatting options.
+	 * @param color of the Ansi Object
+	 * @param formats of the Ansi Object
+	 */
+	public Ansi(Color color, Format... formats) {
+		this.color = color;
+		this.addFormats(formats);
+	}
+	
+	/**
 	 * Returns the corresponding ANSI Escape Sequence for a given {@link Color3b} and optional {@link Format}s.
 	 * @param color3b of the resulting ANSI Escape String.
 	 * @param formats of the resulting ANSI Escape String, can be left empty.
@@ -84,7 +95,21 @@ public class Ansi {
 	 * @return the String representation of the ANSI Escape String.
 	 */
 	public String getAnsiEscape(Color8b color8b, Format... formats) {
-		String escape = "\u001b["+color8b.getColorCode();
+		String escape = "\u001b[38;5;"+color8b.getColorCode();
+		for(Format format : formats) {
+			escape +=";"+format.getFormatCode();
+		}
+		return escape+"m";
+	}
+	
+	/**
+	 * Returns the corresponding ANSI Escape Sequence for a given {@link Color} and optional {@link Format}s.
+	 * @param color of the resulting ANSI Escape String.
+	 * @param formats of the resulting ANSI Escape String, can be left empty.
+	 * @return the String representation of the ANSI Escape String.
+	 */
+	public String getAnsiEscape(Color color, Format... formats) {
+		String escape = "\u001b[38;2;"+color.getColorCode();
 		for(Format format : formats) {
 			escape +=";"+format.getFormatCode();
 		}
@@ -113,7 +138,8 @@ public class Ansi {
 		String escape = "\u001b[";
 		escape += (this.color3b != null) ? this.color3b.getColorCode() : "";
 		escape += (this.color4b != null) ? this.color4b.getColorCode() : "";
-		escape += (this.color8b != null) ? this.color8b.getColorCode() : "";
+		escape += (this.color8b != null) ? "38;5;"+this.color8b.getColorCode() : "";
+		escape += (this.color != null) ? "38;2;"+this.color.getColorCode() : "";
 		for(Format format : this.formats) {
 			escape += ";"+format.getFormatCode();
 		}
@@ -162,5 +188,13 @@ public class Ansi {
 	 */
 	public Color8b getColor8b() {
 		return this.color8b;
+	}
+
+	/**
+	 * Returns this instances stored {@link Color}.
+	 * @return color of this instance
+	 */
+	public Color getColor() {
+		return this.color;
 	}
 }
