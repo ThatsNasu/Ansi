@@ -219,7 +219,7 @@ public class Ansi {
 	
 	/**
 	 * Sets this instances {@link Color4b}.
-	 * @param color3b to be set
+	 * @param color4b to be set
 	 */
 	public void setColor4b(Color4b color4b) {
 		this.color4b = color4b;
@@ -227,7 +227,7 @@ public class Ansi {
 	
 	/**
 	 * Sets this instances {@link Color8b}.
-	 * @param color3b to be set
+	 * @param color8b to be set
 	 */
 	public void setColor8b(Color8b color8b) {
 		this.color8b = color8b;
