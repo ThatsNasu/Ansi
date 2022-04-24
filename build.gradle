@@ -1,9 +1,11 @@
 plugins {
     id 'java-library'
     id 'eclipse'
+    id 'maven-publish'
+    id 'signing'
 }
 
-group = 'dev.bitbite.dasnasu'
+group = 'dev.thatsnasu'
 version = '0.1.0'
 
 java {
@@ -14,9 +16,61 @@ java {
     withSourcesJar()
 }
 
+publishing {
+	publications {
+		maven(MavenPublication) {
+			from components.java
+			groupId = 'dev.thatsnasu'
+			artifactId = 'Ansi'
+			version = '0.1.0'
+			pom {
+				name = 'Ansi - Formatting with Escapes made easy'
+				description = 'Ansi is an easy to use library for easier text formatting with ANSI Escape Sequences by providing the required methods, while keeping the API lightweight and logical.'
+				url = 'https://github.com/thatsnasu/ansi'
+				licenses {
+					license {
+						name = 'MIT License'
+						url = 'https://github.com/thatsnasu/ansi/blob/main/LICENSE'
+					}
+				}
+				developers {
+					developer {
+						id = 'thatsnasu'
+						name = 'Hauke Motzkus'
+						email = 'thatsnasu@bitbite.dev'
+						organization = 'bitbite'
+						organizationUrl = 'https://bitbite.dev'
+					}
+				}
+				scm {
+					connection = 'scm:git:git://gihub.com/thatsnasu/ansi.git'
+					url = 'https://github.com/thatsnasu/ansi'
+				}
+			}
+		}
+	}
+	repositories {
+		maven {
+			name = "OSSRH"
+			credentials {
+				username = ossrhUsername
+				password = ossrhPassword
+			}
+			def releasesRepositoryURL = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+			def snapshotRepositoryURL = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+			url = version.endsWith('SNAPSHOT') ? snapshotRepositoryURL : releasesRepositoryURL
+		}
+	}
+}
+
+signing {
+	sign publishing.publications.maven
+}
+
 artifacts {
     archives javadocJar, sourcesJar
 }
+
 javadoc {
     if(JavaVersion.current().isJava9Compatible()) {
         options.addBooleanOption('html5', true)
