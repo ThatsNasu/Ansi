@@ -1,7 +1,7 @@
 # Ansi - Formatting with Escapes made easy
 
 [![Build](https://github.com/thatsnasu/Ansi/actions/workflows/gradle.yml/badge.svg)](https://github.com/thatsnasu/Ansi/actions/workflows/gradle.yml)
-[![Version](https://img.shields.io/github/v/release/thatsnasu/OpenNetLib?include_prereleases)](https://github.com/thatsnasu/Ansi/releases)
+[![Version](https://img.shields.io/github/v/release/thatsnasu/Ansi?include_prereleases)](https://github.com/thatsnasu/Ansi/releases)
 [![Discord channel](https://img.shields.io/discord/411109318511820800?logo=discord)](https://discord.gg/MdsuFg2bPC)
 
 Ansi is an easy to use library for easier text formatting with ANSI Escape Sequences by providing the required methods, while keeping the API lightweight and logical. Its written in and for Java. Despite being in an early stage, it already saves a lot of work and implementation. If you want to help me improve this library further, feel free to open Issues, fork this Project for your own use or post questions as well as answers to already existing questions.
