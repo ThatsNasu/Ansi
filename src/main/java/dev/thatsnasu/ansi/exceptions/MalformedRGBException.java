@@ -1,5 +1,7 @@
 package dev.thatsnasu.ansi.exceptions;
 
+import dev.thatsnasu.ansi.Color;
+
 /**
  * Thrown to indicate that an attempt to instantiate a {@link Color} with an illegal value for either red, green or blue.
  */
