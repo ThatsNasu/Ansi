@@ -1,5 +1,8 @@
 package dev.thatsnasu.ansi;
 
+import dev.thatsnasu.ansi.exceptions.MalformedHexadecimalException;
+import dev.thatsnasu.ansi.exceptions.MalformedRGBException;
+
 /**
  * Objects of Color will hold the rgb values, as well as providing methods for using and converting them.
  */
@@ -15,6 +18,9 @@ public class Color {
 	 * @param blue value of this color
 	 */
 	public Color(int red, int green, int blue) {
+		if(red > 255 || red < 0) throw new MalformedRGBException("Red can only range from 0-255, "+red+" given.");
+		if(green > 255 || green < 0) throw new MalformedRGBException("Green can only range from 0-255, "+green+" given.");
+		if(blue > 255 || blue < 0) throw new MalformedRGBException("Blue can only range from 0-255, "+blue+" given.");
 		this.red = red;
 		this.green = green;
 		this.blue = blue;
@@ -26,6 +32,7 @@ public class Color {
 	 */
 	public Color(String hexcode) {
 		if(hexcode.contains("#")) hexcode = hexcode.replace("#", "");
+		if(!hexcode.matches("[0-9a-fA-F]+$") || hexcode.length() != 6) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 6 characters, \""+hexcode+"\" given");
 		long l = Long.parseLong(hexcode, 16);
 		this.red = (int) (l/(256*256));
 		this.green = (int) (l-(256*256*this.red))/256;

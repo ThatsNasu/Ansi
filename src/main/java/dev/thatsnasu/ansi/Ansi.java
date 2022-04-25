@@ -138,7 +138,8 @@ public class Ansi {
 	 * Returns the corresponding ANSI Escape Sequence for the stored parameters in this Ansi object.
 	 * @return the String representation of the ANSI Escape String.
 	 */
-	public String getAnsiEscape() {
+	@Override
+	public String toString() {
 		String escape = "\u001b[";
 		escape += (this.color3b != null) ? this.color3b.getColorCode() : "";
 		escape += (this.color4b != null) ? this.color4b.getColorCode() : "";
