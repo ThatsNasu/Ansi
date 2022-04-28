@@ -48,4 +48,10 @@ public class ExceptionCheck {
 		assertThrows(MalformedHexadecimalException.class, () -> new Color("123g45"));
 		assertThrows(MalformedHexadecimalException.class, () -> new Color("#123g45"));
 	}
+	
+	@Test
+	@DisplayName("Expected IllegalArgumentException")
+	void illegalArgument() {
+		assertThrows(IllegalArgumentException.class, () -> new Color(null));
+	}
 }

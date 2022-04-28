@@ -31,6 +31,7 @@ public class Color {
 	 * @param hexcode of this color
 	 */
 	public Color(String hexcode) {
+		if(hexcode == null) throw new IllegalArgumentException("Hexadecimal value expected, null given");
 		if(hexcode.contains("#")) hexcode = hexcode.replace("#", "");
 		if(!hexcode.matches("[0-9a-fA-F]+$") || hexcode.length() != 6) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 6 characters, \""+hexcode+"\" given");
 		long l = Long.parseLong(hexcode, 16);
