@@ -3,4 +3,5 @@
  */
 module dev.thatsnasu.ansi {
 	exports dev.thatsnasu.ansi;
+	exports dev.thatsnasu.ansi.exceptions;
 }

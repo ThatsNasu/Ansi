@@ -33,7 +33,7 @@ public class Color {
 	public Color(String hexcode) {
 		if(hexcode == null) throw new IllegalArgumentException("Hexadecial value expected, null given");
 		if(hexcode.contains("#")) hexcode = hexcode.replace("#", "");
-		if(!hexcode.matches("[0-9a-fA-F]+$") || (hexcode.length() != 6 && hexcode.length() != 3)) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 6 characters, \""+hexcode+"\" given");
+		if(!hexcode.matches("[0-9a-fA-F]+$") || (hexcode.length() != 6 && hexcode.length() != 3)) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 3 or 6 characters, \""+hexcode+"\" given");
 		if(hexcode.length() == 3) hexcode = hexcode.replaceAll(".", "$0$0");
 		long l = Long.parseLong(hexcode, 16);
 		this.red = (int) (l/(256*256));
