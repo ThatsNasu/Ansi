@@ -33,7 +33,8 @@ public class Color {
 	public Color(String hexcode) {
 		if(hexcode == null) throw new IllegalArgumentException("Hexadecial value expected, null given");
 		if(hexcode.contains("#")) hexcode = hexcode.replace("#", "");
-		if(!hexcode.matches("[0-9a-fA-F]+$") || hexcode.length() != 6) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 6 characters, \""+hexcode+"\" given");
+		if(!hexcode.matches("[0-9a-fA-F]+$") || (hexcode.length() != 6 && hexcode.length() != 3)) throw new MalformedHexadecimalException("Hexadecimal values can only hold values from 0-9, a-f and A-F, with a length of 6 characters, \""+hexcode+"\" given");
+		if(hexcode.length() == 3) hexcode = hexcode.replaceAll(".", "$0$0");
 		long l = Long.parseLong(hexcode, 16);
 		this.red = (int) (l/(256*256));
 		this.green = (int) (l-(256*256*this.red))/256;
@@ -57,6 +58,15 @@ public class Color {
 	}
 	
 	/**
+	 * Returns the String representation of the colorCode associated with this {@link Color} Object as three digit Hexadecimal value.
+	 * @return colorCode as three digit Hex.
+	 */
+	public String getHex3() {
+		String hex6 = this.getHex();
+		return "#"+hex6.charAt(1)+hex6.charAt(3)+hex6.charAt(5);
+	}
+	
+	/**
 	 * Returns the red value of this color.
 	 * @return red value
 	 */
@@ -65,11 +75,19 @@ public class Color {
 	}
 	
 	/**
-	 * Returns the red value of this color as hexadecimal String.
+	 * Returns the blue value of this color as part of a hexadecimal String.
 	 * @return red value
 	 */
 	public String getRedAsHex() {
 		return String.format("%02x", this.red);
+	}
+	
+	/**
+	 * Returns the blue value of this color as part of a hexadecimal three digit String.
+	 * @return red value
+	 */
+	public String getRedAsHex3() {
+		return ""+getRedAsHex().charAt(0);
 	}
 	
 	/**
@@ -81,11 +99,19 @@ public class Color {
 	}
 	
 	/**
-	 * Returns the green value of this color as hexadecimal String.
-	 * @return red value
+	 * Returns the blue value of this color as part of a hexadecimal String.
+	 * @return green value
 	 */
 	public String getGreenAsHex() {
 		return String.format("%02x", this.green);
+	}
+	
+	/**
+	 * Returns the blue value of this color as part of a hexadecimal three digit String.
+	 * @return green value
+	 */
+	public String getGreenAsHex3() {
+		return ""+getGreenAsHex().charAt(0);
 	}
 	
 	/**
@@ -97,11 +123,19 @@ public class Color {
 	}
 	
 	/**
-	 * Returns the blue value of this color as hexadecimal String.
-	 * @return red value
+	 * Returns the blue value of this color as part of a hexadecimal String.
+	 * @return blue value
 	 */
 	public String getBlueAsHex() {
 		return String.format("%02x", this.blue);
+	}
+	
+	/**
+	 * Returns the blue value of this color as part of a hexadecimal three digit String.
+	 * @return blue value
+	 */
+	public String getBlueAsHex3() {
+		return ""+getBlueAsHex().charAt(0);
 	}
 	
 	/**

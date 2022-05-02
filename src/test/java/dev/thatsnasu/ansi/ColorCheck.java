@@ -40,6 +40,21 @@ public class ColorCheck {
 		assertThrows(MalformedHexadecimalException.class, () -> new Color("#g12345"));
 		assertThrows(MalformedHexadecimalException.class, () -> new Color("123g45"));
 		assertThrows(MalformedHexadecimalException.class, () -> new Color("#123g45"));
+		
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("1234"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#1234"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("abcd"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#abcd"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("12"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#12"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("ab"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#ab"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("12g"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#12g"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("g12"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#g12"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("1g3"));
+		assertThrows(MalformedHexadecimalException.class, () -> new Color("#1g3"));
 	}
 	
 	@Test
@@ -65,7 +80,12 @@ public class ColorCheck {
 		assertEquals("ea", color.getGreenAsHex(), "Green missmatch while getting stored value as hexadecimal");
 		assertEquals("2d", color.getBlueAsHex(), "Blue missmatch while getting stored value as hexadecimal");
 		
+		assertEquals("7", color.getRedAsHex3(), "Red missmacth while getting stored value as three digit hexadecimal");
+		assertEquals("e", color.getGreenAsHex3(), "Green missmatch while getting stored value as three digit hexadecimal");
+		assertEquals("2", color.getBlueAsHex3(), "Blue missmatch while getting stored value as three digit hexadecimal");
+		
 		assertEquals("#7bea2d", color.getHex(), "Hexadecimal missmatch while getting stored value");
+		assertEquals("#7e2", color.getHex3(), "Hexadecimal missmatch while getting stored value");
 		
 		color = new Color("#afbecd");
 		
@@ -73,7 +93,12 @@ public class ColorCheck {
 		assertEquals("be", color.getGreenAsHex(), "Green missmatch while getting stored value");
 		assertEquals("cd", color.getBlueAsHex(), "Blue missmatch while getting sotred value");
 		
+		assertEquals("a", color.getRedAsHex3(), "Red missmacth while getting stored value as three digit hexadecimal");
+		assertEquals("b", color.getGreenAsHex3(), "Green missmatch while getting stored value as three digit hexadecimal");
+		assertEquals("c", color.getBlueAsHex3(), "Blue missmatch while getting stored value as three digit hexadecimal");
+		
 		assertEquals("#afbecd", color.getHex(), "Hexadecimal missmactch while getting stroed value");
+		assertEquals("#abc", color.getHex3(), "Hexadecimal missmatch while getting stored value");
 		
 		assertEquals(175, color.getRed(), "Red missmatch while getting stored value");
 		assertEquals(190, color.getGreen(), "Green missmatch while getting stored value");
@@ -82,5 +107,26 @@ public class ColorCheck {
 		assertEquals(175, color.getRGB()[0], "Red missmatch while getting stored value as array");
 		assertEquals(190, color.getRGB()[1], "Green missmatch while getting stored value as array");
 		assertEquals(205, color.getRGB()[2], "Blue missmatch while getting stored value as array");
+		
+		color = new Color("abc");
+		
+		assertEquals("aa", color.getRedAsHex(), "Red missmatch while getting stored value");
+		assertEquals("bb", color.getGreenAsHex(), "Green missmatch while getting stored value");
+		assertEquals("cc", color.getBlueAsHex(), "Blue missmatch while getting stored value");
+		
+		assertEquals("a", color.getRedAsHex3(), "Red missmacth while getting stored value as three digit hexadecimal");
+		assertEquals("b", color.getGreenAsHex3(), "Green missmatch while getting stored value as three digit hexadecimal");
+		assertEquals("c", color.getBlueAsHex3(), "Blue missmatch while getting stored value as three digit hexadecimal");
+		
+		assertEquals("#aabbcc", color.getHex(), "Hexadecimal missmatch while getting stored value");
+		assertEquals("#abc", color.getHex3(), "Hexadecimal missmatch while getting stored value");
+		
+		assertEquals(170, color.getRed(), "Red missmatch while getting stored value");
+		assertEquals(187, color.getGreen(), "Green missmatch while getting stored value");
+		assertEquals(204, color.getBlue(), "Blue missmatch while getting stored value");
+		
+		assertEquals(170, color.getRGB()[0], "Red missmatch while getting stored value as array");
+		assertEquals(187, color.getRGB()[1], "Green missmatch while getting stored value as array");
+		assertEquals(204, color.getRGB()[2], "Blue missmatch while getting stored value as array");
 	}
 }
