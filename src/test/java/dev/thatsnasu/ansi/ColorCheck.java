@@ -43,6 +43,12 @@ public class ColorCheck {
 	}
 	
 	@Test
+	@DisplayName("Expected IllegalArgumentException")
+	void illegalArgument() {
+		assertThrows(IllegalArgumentException.class, () -> new Color(null));
+	}
+	
+	@Test
 	@DisplayName("Storing and retrieving")
 	void storeAndRetrieve() {
 		Color color = new Color(123, 234, 45);
