@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'dev.thatsnasu'
-version = '1.0.0'
+version = '1.1.0'
 
 java {
 	toolchain {
@@ -22,7 +22,7 @@ publishing {
 			from components.java
 			groupId = 'dev.thatsnasu'
 			artifactId = 'Ansi'
-			version = '1.0.0'
+			version = '1.1.0'
 			pom {
 				name = 'Ansi - Formatting with Escapes made easy'
 				description = 'Ansi is an easy to use library for easier text formatting with ANSI Escape Sequences by providing the required methods, while keeping the API lightweight and logical.'
