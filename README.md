@@ -17,7 +17,7 @@ is pretty straight forward. Just grab the jar file and add it to your projects d
 ### If you are using Gradle
 add the following line to your dependencies:
 ```
-implementation 'dev.thatsnasu:Ansi:1.0.0'
+implementation 'dev.thatsnasu:Ansi:1.1.0'
 ```
 
 ### For Maven
@@ -26,7 +26,7 @@ it would be:
 <dependency>
     <groupId>dev.thatsnasu</groupId>
     <artifactId>Ansi</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
