@@ -53,8 +53,8 @@ publishing {
 		maven {
 			name = "OSSRH"
 			credentials {
-				username = System.getEnv("ossrhUsername");
-				password = System.getEnv("ossrhPassword");
+				username = System.getenv("ossrhUsername");
+				password = System.getenv("ossrhPassword");
 			}
 			def releasesRepositoryURL = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
 			def snapshotRepositoryURL = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
