@@ -32,7 +32,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in bermuda. Rgb value is 135, 215, 215. Hexadecimal value is #87d7d7.
 	 */
-	BERMUDA("Bermuda", "116", "87d7d7", new int[] {135, 215, 215}),
+	BERMUDA("Bermuda", "116", "#87d7d7", new int[] {135, 215, 215}),
 	/**
 	 * Colorizes text in bittersweet. Rgb value is 255, 95, 95. Hexadecimal value is #ff5f5f.
 	 */
@@ -84,7 +84,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in bright turquoise. Rgb value is 0, 255, 215. Hexadecimal value is #00ffd7.
 	 */
-	BRIGHT_TURQUOISE("Bright_Turquoise", "50", "00ffd7", new int[] {0, 255, 215}),
+	BRIGHT_TURQUOISE("Bright_Turquoise", "50", "#00ffd7", new int[] {0, 255, 215}),
 	/**
 	 * Colorizes text in brown. Rgb value is 135, 95, 0. Hexadecimal value is #875f00.
 	 */
@@ -104,7 +104,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in canary. Rgb value is 215, 255, 95. Hexadecimal value is #d7ff5f.
 	 */
-	CANARY("Canary", "191", "d7ff5f", new int[] {215, 255, 95}),
+	CANARY("Canary", "191", "#d7ff5f", new int[] {215, 255, 95}),
 	/**
 	 * Colorizes text in caramel. Rgb value is 255, 215, 175. Hexadecimal value is #ffd7af.
 	 */
@@ -156,7 +156,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in copper rose. Rgb value is 135, 95, 95. Hexadecimal value is #875f5f.
 	 */
-	COPPER_ROSE("Copper_Rose", "95", "875f5f", new int[] {135, 95, 95}),
+	COPPER_ROSE("Copper_Rose", "95", "#875f5f", new int[] {135, 95, 95}),
 	/**
 	 * Colorizes text in copperfield. Rgb value is 215, 135, 95. Hexadecimal value is #d7875f.
 	 */
@@ -184,7 +184,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in cumulus. Rgb value is 255, 255, 215. Hexadecimal value is #ffffd7.
 	 */
-	CUMULUS("Cumulus", "230", "ffffd7", new int[] {255, 255, 215}),
+	CUMULUS("Cumulus", "230", "#ffffd7", new int[] {255, 255, 215}),
 	/**
 	 * Colorizes text in cyan. Rgb value is 0, 255, 255. Hexadecimal value is #00ffff.
 	 */
@@ -196,7 +196,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in dark blue. Rgb value is 0, 0, 175. Hexadecimal value is #0000af.
 	 */
-	DARK_BLUE("Dark_Blue", "19", "0000af", new int[] {0, 0, 175}),
+	DARK_BLUE("Dark_Blue", "19", "#0000af", new int[] {0, 0, 175}),
 	/**
 	 * Colorizes text in deco. Rgb value is 215, 215, 135. Hexadecimal value is #d7d787.
 	 */
@@ -212,7 +212,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in deluge. Rgb value is 135, 95, 175. Hexadecimal value is #875faf.
 	 */
-	DELUGE("Deluge", "97", "875faf", new int[] {135, 95, 175}),
+	DELUGE("Deluge", "97", "#875faf", new int[] {135, 95, 175}),
 	/**
 	 * Colorizes text in dolly. Rgb value is 255, 255, 135. Hexadecimal value is #ffff87.
 	 */
@@ -224,7 +224,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in downy. Rgb value is 95, 215, 175. Hexadecimal value is #5fd7af.
 	 */
-	DOWNY("Downy", "79", "5fd7af", new int[] {95, 215, 175}),
+	DOWNY("Downy", "79", "#5fd7af", new int[] {95, 215, 175}),
 	/**
 	 * Colorizes text in dusty gray. Rgb value is  148, 148, 148. Hexadecimal value is #949494.
 	 */
@@ -248,7 +248,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in flirt. Rgb value is 175, 0, 95. Hexadecimal value is #af005f.
 	 */
-	FLIRT("Flirt", "125", "af005f", new int[] {175, 0, 95}),
+	FLIRT("Flirt", "125", "#af005f", new int[] {175, 0, 95}),
 	/**
 	 * Colorizes text in flush orange. Rgb value is 255, 135, 0. Hexadecimal value is #ff8700.
 	 */
@@ -260,11 +260,11 @@ public enum Color8b {
 	/**
 	 * Colorizes text in french pass. Rgb value is 175, 255, 255. Hexadecimal value is #afffff.
 	 */
-	FRENCH_PASS("French_Pass", "159", "afffff", new int[] {175, 255, 255}),
+	FRENCH_PASS("French_Pass", "159", "#afffff", new int[] {175, 255, 255}),
 	/**
 	 * Colorizes text in fresh eggplant. Rgb value is 128, 0, 128. Hexadecimal value is #800080.
 	 */
-	FRESH_EGGPLANT("Fresh_Eggplant", "5", "800080", new int[] {128, 0, 128}),
+	FRESH_EGGPLANT("Fresh_Eggplant", "5", "#800080", new int[] {128, 0, 128}),
 	/**
 	 * Colorizes text in fuchsia pink. Rgb value is 175, 95, 175. Hexadecimal value is #af5faf.
 	 */
@@ -272,7 +272,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in gallery. Rgb value is 238, 238, 238. Hexadecimal value is #eeeeee.
 	 */
-	GALLERY("Gallery", "255", "eeeeee", new int[] {238, 238, 238}),
+	GALLERY("Gallery", "255", "#eeeeee", new int[] {238, 238, 238}),
 	/**
 	 * Colorizes text in glade green. Rgb value is 95, 135, 95. Hexadecimal value is #5f875f.
 	 */
@@ -284,7 +284,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in grandis. Rgb value is 255, 215, 135. Hexadecimal value is #ffd787.
 	 */
-	GRANDIS("Grandis", "222", "ffd787", new int[] {255, 215, 135}),
+	GRANDIS("Grandis", "222", "#ffd787", new int[] {255, 215, 135}),
 	/**
 	 * Colorizes text in gray. Rgb value is 128, 128, 128. Hexadecimal value is #808080.
 	 */
@@ -464,7 +464,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in orchid. Rgb value is 215, 95, 215. Hexadecimal value is #d75fd7.
 	 */
-	ORCHID("Orchid", "170", "d75fd7", new int[] {215, 95, 215}),
+	ORCHID("Orchid", "170", "#d75fd7", new int[] {215, 95, 215}),
 	/**
 	 * Colorizes text in orient. Rgb value is 0, 95, 135. Hexadecimal value is #005f87.
 	 */
@@ -544,7 +544,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in reef. Rgb value is 215, 255, 175. Hexadecimal value is #d7ffaf.
 	 */
-	REEF("Reef", "193", "d7ffaf", new int[] {215, 255, 175}),
+	REEF("Reef", "193", "#d7ffaf", new int[] {215, 255, 175}),
 	/**
 	 * Colorizes text in rio grande. Rgb value is 175, 215, 0. Hexadecimal value is #afd700.
 	 */
@@ -608,7 +608,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in snowy mint. Rgb value is 215, 255, 215. Hexadecimal value is #d7ffd7.
 	 */
-	SNOWY_MINT("Snowy_Mint", "194", "d7ffd7", new int[] {215, 255, 215}),
+	SNOWY_MINT("Snowy_Mint", "194", "#d7ffd7", new int[] {215, 255, 215}),
 	/**
 	 * Colorizes text in spring green. Rgb value is 0, 255, 135. Hexadecimal value is #00ff87.
 	 */
@@ -628,7 +628,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in tacha. Rgb value is 215, 175, 95. Hexadecimal value is #d7af5f.
 	 */
-	TACHA("Tacha", "179", "d7af5f", new int[] {215, 175, 95}),
+	TACHA("Tacha", "179", "#d7af5f", new int[] {215, 175, 95}),
 	/**
 	 * Colorizes text in tan. Rgb value is 215, 175, 135. Hexadecimal value is #d7af87.
 	 */
@@ -648,7 +648,7 @@ public enum Color8b {
 	/**
 	 * Colorizes text in texas rose. Rgb value is 255, 175, 95. Hexadecimal value is #ffaf5f.
 	 */
-	TEXAS_ROSE("Texas_Rose", "215", "ffaf5f", new int[] {255, 175, 95}),
+	TEXAS_ROSE("Texas_Rose", "215", "#ffaf5f", new int[] {255, 175, 95}),
 	/**
 	 * Colorizes text in thistle. Rgb value is 215, 175, 215. Hexadecimal value is #d7afd7.
 	 */
